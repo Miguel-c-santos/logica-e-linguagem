@@ -1,0 +1,39 @@
+# Criando uma matriz 3x3 cheia de zeros
+# Essa forma usa uma "compreensão de lista" para gerar automaticamente 3 linhas com 3 zeros cada
+matriz = [[0]*3 for _ in range(3)]
+
+# Preenchendo a matriz com valores digitados pelo usuário
+for linha in range(3):  # Percorre as 3 linhas
+    for coluna in range(3):  # Percorre as 3 colunas
+        # Pede para o usuário digitar um número e guarda na posição correta da matriz
+        matriz[linha][coluna] = int(input(f"Digite um número para [{linha}, {coluna}]: "))
+
+# Variável para armazenar a soma dos números pares
+soma_pares = 0
+
+# Mostrando a matriz formatada e somando os números pares ao mesmo tempo
+print("\nMatriz digitada:")
+for linha in range(3):  # Percorre as linhas
+    for coluna in range(3):  # Percorre as colunas
+        # Mostra o valor da matriz centralizado dentro de colchetes
+        print(f"[{matriz[linha][coluna]:^5}]", end="")
+        
+        # Verifica se o número é par (resto da divisão por 2 é igual a zero)
+        if matriz[linha][coluna] % 2 == 0:
+            # Se for par, soma o valor na variável soma_pares
+            soma_pares += matriz[linha][coluna]
+    print()  # Quebra de linha no final de cada linha da matriz
+
+# B) Calculando a soma dos valores da terceira coluna (coluna de índice 2)
+# Aqui pegamos os três valores da última coluna e somamos
+soma_terceira_coluna = matriz[0][2] + matriz[1][2] + matriz[2][2]
+
+# C) Encontrando o maior valor da segunda linha (linha de índice 1)
+# A função max() retorna o maior número dentro da lista passada
+maior_segunda_linha = max(matriz[1])
+
+# Mostrando os resultados formatados
+print("\nResultados:")
+print(f"A) Soma dos valores pares: {soma_pares}")
+print(f"B) Soma dos valores da terceira coluna: {soma_terceira_coluna}")
+print(f"C) Maior valor da segunda linha: {maior_segunda_linha}")
