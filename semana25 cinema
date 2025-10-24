@@ -1,0 +1,38 @@
+# =============================================
+# MÓDULO 2 - SISTEMA DE RESERVAS DO CINEMA 🎬
+# =============================================
+
+# Vamos criar uma matriz com 5 fileiras e 8 assentos em cada
+# 0 = assento livre | 1 = assento reservado
+cinema = [[0 for assento in range(8)] for fileira in range(5)]
+
+# Função pra mostrar o mapa de assentos do cinema
+def exibir_mapa():
+    print("\n=== Mapa de Assentos ===")
+    for i in range(len(cinema)):
+        print(f"Fileira {i+1}: {cinema[i]}")
+
+# Função pra reservar um assento (muda 0 pra 1)
+def reservar(fileira, assento):
+    if cinema[fileira-1][assento-1] == 0:
+        cinema[fileira-1][assento-1] = 1
+        print(f"Assento ({fileira}, {assento}) reservado com sucesso!")
+    else:
+        print(f"O assento ({fileira}, {assento}) já está ocupado!")
+
+# Função pra cancelar uma reserva (muda 1 pra 0)
+def cancelar(fileira, assento):
+    if cinema[fileira-1][assento-1] == 1:
+        cinema[fileira-1][assento-1] = 0
+        print(f"Reserva do assento ({fileira}, {assento}) cancelada!")
+    else:
+        print(f"O assento ({fileira}, {assento}) já estava livre.")
+
+# Fazendo as ações pedidas no desafio
+reservar(1, 3)
+reservar(2, 5)
+reservar(4, 7)
+cancelar(2, 5)
+
+# Mostrando o mapa final
+exibir_mapa()
