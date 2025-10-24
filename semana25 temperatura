@@ -1,0 +1,28 @@
+# =============================================
+# MÓDULO 1 - TRANSPOSTO DE DADOS (MATRIZES)
+# =============================================
+
+# Matriz com as temperaturas de 3 cidades ao longo de 4 meses
+# Cada linha é uma cidade, e cada número é a temperatura daquele mês
+matriz_temperaturas = [
+    [22, 25, 28, 32],  # Cidade 1
+    [20, 23, 26, 30],  # Cidade 2
+    [18, 22, 25, 29]   # Cidade 3
+]
+
+# Agora vamos fazer a "transposição" da matriz
+# Isso significa trocar as linhas pelas colunas
+matriz_transposta = []
+
+# Aqui percorremos as colunas da matriz original
+for coluna in range(len(matriz_temperaturas[0])):  # 4 colunas
+    nova_linha = []  # Essa lista vai virar uma linha da nova matriz
+    # Agora pegamos cada linha da matriz original
+    for linha in range(len(matriz_temperaturas)):  # 3 linhas
+        nova_linha.append(matriz_temperaturas[linha][coluna])
+    matriz_transposta.append(nova_linha)
+
+# Mostrando o resultado final
+print("=== Módulo 1: Matriz Transposta (Meses x Cidades) ===")
+for linha in matriz_transposta:
+    print(linha)
